@@ -36,13 +36,11 @@ button.addEventListener('click', function () {
 
     let discountedPrice;
 
-    /*if (nameSurname.value = '') {
-        alert("Errore. Deve inserire il suo nome e cognome per poter stampare i biglietti")
-    }*/
+
 
     if (!isNaN(km) && (km > 0)) {
 
-
+        //se minorenne
         if (age === 'Under 18') {
 
             discountedPrice = (ticketPrice * 0.8).toFixed(2)
@@ -50,14 +48,14 @@ button.addEventListener('click', function () {
             finalPriice.innerHTML = 'Il totale da pagare è di: € ' + discountedPrice;
 
         }
-
+        //se anziano
         else if (age === 'Over 65') {
             discountedPrice = (ticketPrice * 0.6).toFixed(2)
             console.log(discountedPrice)
             finalPriice.innerHTML = 'Il totale da pagare è di: € ' + discountedPrice;
 
         }
-
+        //tutte le altre casistiche
         else {
             discountedPrice = (ticketPrice).toFixed(2)
             console.log(discountedPrice)
@@ -70,6 +68,9 @@ button.addEventListener('click', function () {
 
     }
 
+    if (nameSurname.value === '') {
+        alert("Errore. Deve inserire il suo nome e cognome per poter procedere al preventivo");
+    }
 })
 
 reset.addEventListener('click', function () {
