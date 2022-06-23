@@ -31,12 +31,16 @@
                     <input type="number" id="km" placeholder="Lunghezza viaggio...">
                 </div>
                 <div class="col-4 text-center">
-                    <label for="age"> Quanti anni ha il viaggiatore? </label>
-                    <input type="select" id="age" placeholder="Inserisca la sua età...">
+                    <label for="age" class="d-block"> Quanti anni ha il viaggiatore? </label>
+                    <select name="age" id="age">
+                        <option value="Under 18"> Minorenne</option>
+                        <option value="Tra 18 e 65">Maggiorenne e under 65</option>
+                        <option value="Over 65"> Over 65</option>
+                    </select>
                 </div>
             </div>
         </div>
-        <div class="container pb-5">
+        <div class="container py-5">
 
             <div class="row">
                 <div class="col-6 text-center">
@@ -49,6 +53,7 @@
                 </div>
             </div>
         </div>
+        <span id="your-price-is"></span>
     </main>
     <!-- javascript -->
     <script src="js/script.js"></script>

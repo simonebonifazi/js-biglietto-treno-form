@@ -12,49 +12,64 @@ Se volete potete anche spingervi al responsive ma l'importante è che facciate f
 */
 
 //dichiaro le variabili del form
-const nameSurname = document.getElementById('name-and-surname')
-const kms = document.getElementById('km')
-const userAge = document.getElementById('age')
-const button = document.getElementById('discover-price')
+const nameSurname = document.getElementById('name-and-surname');
+const kms = document.getElementById('km');
+const userAge = document.getElementById('age');
+const button = document.getElementById('discover-price');
+const reset = document.getElementById('restart');
+const finalPriice = document.getElementById('your-price-is');
 
 // attivo il bottone al click
 button.addEventListener('click', function () {
     const name = nameSurname.value;
     console.log(name)
 
-    const km = kms.value;
+    const km = parseInt(kms.value);
     console.log(km)
 
     const age = userAge.value;
     console.log(age)
 
     // calcolo il prezzo del biglietto
-    const ticketPrice = 0.21 * km
+    let ticketPrice = 0.21 * km
     console.log(ticketPrice)
 
-    let discountedPrice
+    let discountedPrice;
 
-    if (!isNaN(km) && (km > 0) && (!isNaN(age) && (age > 0))) {
+    if (!isNaN(km) && (km > 0)) {
 
 
-        if (age < 18) {
+        if (age === 'Under 18') {
 
             discountedPrice = (ticketPrice * 0.8).toFixed(2)
+            console.log(discountedPrice)
+            finalPriice.innerHTML = 'Il totale da pagare è di: € ' + discountedPrice;
 
         }
 
-        else if (age > 65) {
+        else if (age === 'Over 65') {
             discountedPrice = (ticketPrice * 0.6).toFixed(2)
+            console.log(discountedPrice)
+            finalPriice.innerHTML = 'Il totale da pagare è di: € ' + discountedPrice;
+
         }
 
         else {
             discountedPrice = (ticketPrice).toFixed(2)
+            console.log(discountedPrice)
+            finalPriice.innerHTML = 'Il totale da pagare è di: € ' + discountedPrice;
         };
 
 
     } else {
-        alert("Errore. Esprimi le risposte in numeri positivi!")
+        alert("Errore. Siamo spiacenti di informarla che i dati da lei inseriti risultano non validi. Riprovi di nuovo. In caso persista il problema, riavvii il dispositivo.")
 
     }
 
+})
+
+reset.addEventListener('click', function () {
+    nameSurname.value = '';
+    kms.value = '';
+    userAge.value = 'Tra 18 e 65'
 })
