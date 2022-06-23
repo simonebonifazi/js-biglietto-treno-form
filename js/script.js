@@ -48,7 +48,7 @@ button.addEventListener('click', function () {
             discountedPrice = (ticketPrice * 0.8).toFixed(2)
             console.log(discountedPrice)
             datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
-            finalPrice.innerHTML = `Il totale da pagare è di: <del class="bg-danger"> € ${ticketPrice.toFixed(2)} </del>  <strong class="bg-success mx-2 p-1 rounded-pill"> € ${discountedPrice} </strong>`
+            finalPrice.innerHTML = `Il totale è di: <del class="bg-danger"> € ${ticketPrice.toFixed(2)} </del>  <strong class="bg-success mx-2 p-1 rounded-pill"> € ${discountedPrice} </strong>`
             ticket.className = ticket + 'd-block';
         }
         //se anziano
@@ -56,7 +56,7 @@ button.addEventListener('click', function () {
             discountedPrice = (ticketPrice * 0.6).toFixed(2)
             console.log(discountedPrice)
             datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
-            finalPrice.innerHTML = `Il totale da pagare è di: <del class="bg-danger"> € ${ticketPrice.toFixed(2)} </del>  <strong class="bg-success mx-2 p-1 rounded-pill"> € ${discountedPrice} </strong>`
+            finalPrice.innerHTML = `Il totale è di: <del class="bg-danger"> € ${ticketPrice.toFixed(2)} </del>  <strong class="bg-success mx-2 p-1 rounded-pill"> € ${discountedPrice} </strong>`
             ticket.className = ticket + 'd-block';
         }
         //tutte le altre casistiche
@@ -64,7 +64,7 @@ button.addEventListener('click', function () {
             discountedPrice = (ticketPrice).toFixed(2)
             console.log(discountedPrice)
             datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
-            finalPrice.innerHTML = `Il totale da pagare è di: <strong> € ${discountedPrice} </strong>`
+            finalPrice.innerHTML = `Il totale è di: <strong> € ${discountedPrice} </strong>`
             ticket.className = ticket + 'd-block';
         }
 
