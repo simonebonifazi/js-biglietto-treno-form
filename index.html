@@ -19,18 +19,19 @@
 </head>
 
 <body>
+    <!-- pseudo form // clients datas -->
     <main class="bg-info">
         <div class="container-fluid py-5">
             <div class="row text-white">
-                <div class="col-4 text-center">
+                <div class=" col-12 col-md-4 pb-5 text-center">
                     <label for="name-and-surname" class="d-block"> Come si chiama? </label>
                     <input type="text" id="name-and-surname" placeholder="Nome e Cognome...">
                 </div>
-                <div class="col-4 text-center">
-                    <label for="km"> Quale distanza deve percorrere? </label> <span>KM: </span>
+                <div class=" col-12 col-md-4 pb-5 text-center">
+                    <label for="km"> Quale distanza deve percorrere? </label> <span class="d-block">KM: </span>
                     <input type="number" id="km" placeholder="Lunghezza viaggio...">
                 </div>
-                <div class="col-4 text-center">
+                <div class=" col-12 col-md-4 pb-5 text-center">
                     <label for="age" class="d-block"> Indichi cortesemente la sua fascia d'età tra le seguenti: </label>
                     <select name="age" id="age">
                         <option value="Under 18"> Minorenne</option>
@@ -41,7 +42,7 @@
             </div>
         </div>
         <div class="container py-5">
-
+            <!-- second part pseuso form -->
             <div class="row">
                 <div class="col-6 text-center">
                     <button id="discover-price" class="btn rounded-pill bg-white text-black"> Scopri ora il tuo
@@ -53,6 +54,7 @@
                 </div>
             </div>
         </div>
+        <!-- ticket section -->
         <section id="ticket-definitive" class="d-none">
             <div class="container-fluid">
                 <div class="row">
