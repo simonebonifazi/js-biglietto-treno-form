@@ -17,7 +17,8 @@ const kms = document.getElementById('km');
 const userAge = document.getElementById('age');
 const button = document.getElementById('discover-price');
 const reset = document.getElementById('restart');
-const finalPriice = document.getElementById('your-price-is');
+const finalPrice = document.getElementById('your-price-is');
+const datasBuyer = document.getElementById('your-datas');
 
 // attivo il bottone al click
 button.addEventListener('click', function () {
@@ -31,10 +32,11 @@ button.addEventListener('click', function () {
     console.log(age)
 
     // calcolo il prezzo del biglietto
-    let ticketPrice = 0.21 * km
-    console.log(ticketPrice)
+    let ticketPrice = 0.21 * km;
+    console.log(ticketPrice);
 
     let discountedPrice;
+    const ticket = document.getElementById('ticket-definitive')
 
 
 
@@ -45,22 +47,26 @@ button.addEventListener('click', function () {
 
             discountedPrice = (ticketPrice * 0.8).toFixed(2)
             console.log(discountedPrice)
-            finalPriice.innerHTML = 'Il totale da pagare è di: € ' + discountedPrice;
-
+            datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
+            finalPrice.innerHTML = `Il totale da pagare è di: <del class="bg-danger"> € ${ticketPrice.toFixed(2)} </del>  <strong class="bg-success mx-2 p-1 rounded-pill"> € ${discountedPrice} </strong>`
+            ticket.className = ticket + 'd-block';
         }
         //se anziano
         else if (age === 'Over 65') {
             discountedPrice = (ticketPrice * 0.6).toFixed(2)
             console.log(discountedPrice)
-            finalPriice.innerHTML = 'Il totale da pagare è di: € ' + discountedPrice;
-
+            datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
+            finalPrice.innerHTML = `Il totale da pagare è di: <del class="bg-danger"> € ${ticketPrice.toFixed(2)} </del>  <strong class="bg-success mx-2 p-1 rounded-pill"> € ${discountedPrice} </strong>`
+            ticket.className = ticket + 'd-block';
         }
         //tutte le altre casistiche
         else {
             discountedPrice = (ticketPrice).toFixed(2)
             console.log(discountedPrice)
-            finalPriice.innerHTML = 'Il totale da pagare è di: € ' + discountedPrice;
-        };
+            datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
+            finalPrice.innerHTML = `Il totale da pagare è di: <strong> € ${discountedPrice} </strong>`
+            ticket.className = ticket + 'd-block';
+        }
 
 
     } else {
