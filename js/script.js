@@ -19,6 +19,8 @@ const button = document.getElementById('discover-price');
 const reset = document.getElementById('restart');
 const finalPrice = document.getElementById('your-price-is');
 const datasBuyer = document.getElementById('your-datas');
+const ticket = document.getElementById('ticket-definitive');
+
 
 // attivo il bottone al click
 button.addEventListener('click', function () {
@@ -36,7 +38,6 @@ button.addEventListener('click', function () {
     console.log(ticketPrice);
 
     let discountedPrice;
-    const ticket = document.getElementById('ticket-definitive')
 
 
 
@@ -49,7 +50,9 @@ button.addEventListener('click', function () {
             console.log(discountedPrice)
             datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
             finalPrice.innerHTML = `Il totale è di: <del class="bg-danger"> € ${ticketPrice.toFixed(2)} </del>  <strong class="bg-success mx-2 p-1 rounded-pill"> € ${discountedPrice} </strong>`
-            ticket.className = ticket + 'd-block';
+            ticket.classList.remove('d-none');
+            ticket.classList.add('d-block');
+
         }
         //se anziano
         else if (age === 'Over 65') {
@@ -57,7 +60,9 @@ button.addEventListener('click', function () {
             console.log(discountedPrice)
             datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
             finalPrice.innerHTML = `Il totale è di: <del class="bg-danger"> € ${ticketPrice.toFixed(2)} </del>  <strong class="bg-success mx-2 p-1 rounded-pill"> € ${discountedPrice} </strong>`
-            ticket.className = ticket + 'd-block';
+            ticket.classList.remove('d-none');
+            ticket.classList.add('d-block');
+
         }
         //tutte le altre casistiche
         else {
@@ -65,7 +70,9 @@ button.addEventListener('click', function () {
             console.log(discountedPrice)
             datasBuyer.innerText = `Salve ${name} , per il suo viaggio di KM ${km}`
             finalPrice.innerHTML = `Il totale è di: <strong> € ${discountedPrice} </strong>`
-            ticket.className = ticket + 'd-block';
+            ticket.classList.remove('d-none');
+            ticket.classList.add('d-block');
+
         }
 
 
@@ -79,8 +86,13 @@ button.addEventListener('click', function () {
     }
 })
 
+
+
+//setto bottone reset
 reset.addEventListener('click', function () {
     nameSurname.value = '';
     kms.value = '';
-    userAge.value = 'Tra 18 e 65'
+    userAge.value = 'Tra 18 e 65';
+    ticket.classList.remove('d-block')
+    ticket.classList.add('d-none')
 })
