@@ -36,6 +36,10 @@ button.addEventListener('click', function () {
 
     let discountedPrice;
 
+    /*if (nameSurname.value = '') {
+        alert("Errore. Deve inserire il suo nome e cognome per poter stampare i biglietti")
+    }*/
+
     if (!isNaN(km) && (km > 0)) {
 
 
